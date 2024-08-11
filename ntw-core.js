@@ -21,7 +21,7 @@ Furno.webservice.nt.crt_index = function () {
     document.body.appendChild(header);
     document.body.appendChild(main);
     document.body.appendChild(footer);
-    
+
     // 创建标题
     const headerList = document.createElement('div');
     headerList.classList.add('header');
@@ -36,4 +36,6 @@ Furno.webservice.nt.crt_index = function () {
 }
 
 const Nekotail = Furno.webservice.nt;
-Nekotail.crt_index();
+document.onload = () => {
+    Nekotail.crt_index();
+}
