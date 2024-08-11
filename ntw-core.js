@@ -1,4 +1,4 @@
-export const Furno = {
+const Furno = {
   webservice: {
     nt: {}
   }
@@ -7,3 +7,6 @@ export const Furno = {
 Furno.webservice.nt.crt_index = function () {
   document.title = "猫尾巴 — Neko-Tail —";
 }
+
+const Nekotail = Furno.webservice.nt;
+Nekotail.crt_index();
