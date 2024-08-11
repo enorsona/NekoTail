@@ -1,0 +1,225 @@
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+.dropdown-title .main-text {
+    font-size: calc(var(--standard-value) / 2);
+}
+.dropdown-title .desc-text {
+    font-size: calc(var(--standard-value) / 4);
+}
+main {
+    height: calc(100% - (var(--standard-value) + 2 * var(--standard-padding)));
+    background: var(--main-color);
+}
+body.mobile main {
+    height: calc(100% - 2 * (var(--standard-value) + 2 * var(--standard-padding)));
+}
+
+footer {
+    height: calc(var(--standard-value) + 2 * var(--standard-padding));
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Aria Core Tail Service CSS*/
+:root {
+    --standard-value: 6rem;
+    --standard-padding: 1rem;
+    --main-color: rgba(17, 17, 17, 0.9);
+    --sub-color: rgba(17, 17, 17, 1);
+}
+
+html, body, body * {
+    font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    overflow: hidden;
+    overscroll-behavior: none;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+body {
+    height: 100vh;
+}
+
+header {
+    height: var(--standard-value);
+    flex-direction: row;
+    user-select: none;
+    position: relative;
+    overflow: visible;
+}
+header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 0.25rem;
+    width: 0;
+    background: white;
+    transform: translateX(-50%);
+    transition: width 2s ease;
+}
+header:hover::after {
+    width: 100%;
+}
+header .dropdown-title {
+    height: 0;
+    width: 50%;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    transform: translateX(-50%);
+    overflow: hidden;
+    transition: all 2s ease;
+}
+header:hover .dropdown-title {
+    height: calc(2 * var(--standard-value));
+    opacity: 0.75;
+    background: var(--sub-color);
+}
+header .dropdown-title::before, header .dropdown-title::after {
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 0.25rem;
+    background: white;
+    transition: height 2s ease, width 2s ease;
+}
+header .dropdown-title::before {
+    top: 0;
+    left: 0;
+}
+header .dropdown-title::after {
+    top: 0;
+    right: 0;
+}
+header:hover .dropdown-title::before, header:hover .dropdown-title::after {
+    height: 100%;
+}
+header:hover .dropdown-title::before {
+    transition: height 2s ease, width 2s ease 2s;
+}
+header:hover .dropdown-title::after {
+    transition: height 2s ease, width 2s ease 2s;
+}
+header .dropdown-title .left-border,
+header .dropdown-title .right-border {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0.25rem;
+    background-color: white;
+    transition: width 1s ease 2s;
+}
+header .dropdown-title .left-border {
+    bottom: 0;
+    left: 0;
+}
+header .dropdown-title .right-border {
+    bottom: 0;
+    right: 0;
+}
+header:hover .dropdown-title .left-border {
+    width: 50%;
+}
+header:hover .dropdown-title .right-border {
+    width: 50%;
+}
+
+header, footer {
+    background: var(--sub-color);
+    align-content: center;
+    justify-content: center;
+    padding: var(--standard-padding);
+}
+
+main {
+    justify-content: center;
+    align-items: flex-end;
+}
+main > * {
+    width: 100%;
+}
+
+main .main-frame {
+    height: calc(100% - var(--standard-value));
+}
+main .main-footer {
+    height: var(--standard-value);
+    user-select: none;
+}
+
+.round-icon {
+    border: solid 0.25rem;
+    border-radius: 50%;
+    height: calc(var(--standard-value) - 0.5rem);
+    width: calc(var(--standard-value) - 0.5rem);
+    background: var(--main-color);
+    opacity: 0.9;
+    font-size: calc(0.75 * var(--standard-value));
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.site-info {
+    height: var(--standard-value);
+    align-items: center;
+    justify-content: center;
+    background: var(--sub-color);
+}
+.site-info .copyright, .site-info .copyright * {
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
