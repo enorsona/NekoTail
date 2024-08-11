@@ -32,10 +32,10 @@ Furno.webservice.nt.crt_index = function () {
         headerList.appendChild(itemDiv);
     })
     header.appendChild(headerList);
-    
+
 }
 
 const Nekotail = Furno.webservice.nt;
-document.onload = () => {
+window.onload = () => {
     Nekotail.crt_index();
 }
