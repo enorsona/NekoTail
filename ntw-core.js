@@ -7,6 +7,7 @@ const Furno = {
 Furno.webservice.nt.crt_index = function () {
     document.title = "猫尾巴 — Neko-Tail —";
 
+    const body = document.querySelector('body');
     // 导入CSS
     const css = document.createElement('link');
     css.rel = 'stylesheet';
@@ -18,9 +19,9 @@ Furno.webservice.nt.crt_index = function () {
     const header = document.createElement('header');
     const main = document.createElement('main');
     const footer = document.createElement('footer');
-    document.body.appendChild(header);
-    document.body.appendChild(main);
-    document.body.appendChild(footer);
+    body.appendChild(header);
+    body.appendChild(main);
+    body.appendChild(footer);
 
     // 创建标题
     const headerList = document.createElement('div');
