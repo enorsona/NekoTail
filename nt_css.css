@@ -94,20 +94,6 @@ header {
     position: relative;
     overflow: visible;
 }
-header::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    height: 0.25rem;
-    width: 0;
-    background: white;
-    transform: translateX(-50%);
-    transition: width 2s ease;
-}
-header:hover::after {
-    width: 100%;
-}
 header .dropdown-title {
     height: 0;
     width: 50%;
@@ -222,4 +208,40 @@ main .main-footer {
     align-content: center;
     justify-content: center;
     text-align: center;
+}
+
+/* nt classes*/
+
+.header {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+.nt-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+    min-width: 4rem;
+    cursor: pointer;
+}
+.header .nt-btn {
+
+}
+.header .nt-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 0.25rem;
+    width: 0;
+    background: white;
+    transform: translateX(-50%);
+    transition: width 2s ease;
+}
+.header .nt-btn:hover::after {
+    width: 100%;
 }

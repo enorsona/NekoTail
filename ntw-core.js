@@ -30,6 +30,7 @@ Furno.webservice.nt.crt_index = function () {
     headerListContents.forEach(item => {
         const itemDiv = document.createElement('div');
         itemDiv.innerHTML = item;
+        itemDiv.classList.add('nt-btn');
         headerList.appendChild(itemDiv);
     })
     header.appendChild(headerList);
